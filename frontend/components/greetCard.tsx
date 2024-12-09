@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "./link";
+import LinkButton from "./linkButton";
 
 export const runtime = "edge";
 
@@ -23,9 +23,9 @@ export default function GreetCard() {
           placeholder="Your name"
         />
       </div>
-      <Link href={`/greet/${name}`} disabled={name == ""}>
+      <LinkButton href={`/greet/${name}`} disabled={name == ""}>
         Greet {name || "you"}
-      </Link>
+      </LinkButton>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "@/components/link";
+import LinkButton from "@/components/linkButton";
 import GreetCard from "@/components/greetCard";
 
 export default function Home() {
@@ -54,7 +54,7 @@ export default function Home() {
         </div>
 
         <div className="flex gap-8 items-center flex-col sm:flex-row">
-          <Link href="/greet-fleek">Greet Fleek</Link>
+          <LinkButton href="/greet-fleek">Greet Fleek</LinkButton>
           <GreetCard />
         </div>
       </main>
