@@ -8,6 +8,11 @@ export const runtime = "edge";
 export default function GreetCard() {
   const [name, setName] = useState("");
 
+  const urlSafeName = name
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-zA-Z0-9\-]/g, "");
+
   return (
     <div className="relative grid border rounded-lg items-center justify-items-center p-8 gap-4 font-[family-name:var(--font-geist-sans)]">
       <p className="absolute top-0 left-0 px-3 py-2 text-xs font-bold opacity-50">
@@ -23,8 +28,8 @@ export default function GreetCard() {
           placeholder="Your name"
         />
       </div>
-      <LinkButton href={`/greet/${name}`} disabled={name == ""}>
-        Greet {name || "you"}
+      <LinkButton href={`/greet/${urlSafeName}`} disabled={!urlSafeName}>
+        Greet {urlSafeName || "you"}
       </LinkButton>
     </div>
   );
