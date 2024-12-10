@@ -4,11 +4,13 @@ export default function LinkButton({
   href,
   disabled,
   target,
+  prefetch,
   children,
 }: Readonly<{
   href: string;
   disabled?: boolean;
   target?: string;
+  prefetch?: boolean | null;
   children: React.ReactNode;
 }>) {
   return (
@@ -21,6 +23,7 @@ export default function LinkButton({
       tabIndex={disabled ? -1 : undefined}
       target={target}
       rel={target == "_blank" ? "noopener noreferrer" : undefined}
+      prefetch={prefetch}
     >
       {children}
     </Link>

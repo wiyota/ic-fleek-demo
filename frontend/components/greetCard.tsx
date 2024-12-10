@@ -28,7 +28,11 @@ export default function GreetCard() {
           placeholder="Your name"
         />
       </div>
-      <LinkButton href={`/greet/${urlSafeName}`} disabled={!urlSafeName}>
+      <LinkButton
+        href={urlSafeName ? `/greet/${urlSafeName}` : "#"}
+        disabled={!urlSafeName}
+        prefetch={false}
+      >
         Greet {urlSafeName || "you"}
       </LinkButton>
     </div>
